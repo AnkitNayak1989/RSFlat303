@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+  <RadioGroup 
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical">
+    <RadioButton 
+        android:id="@+id/owner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Owner"/>
+    <RadioButton 
+        android:id="@+id/rider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rider"/>
+  </RadioGroup>
+  <TextView
+       
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="From"
+        android:id="@+id/textViewFrom"  />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextFrom" />
+    <TextView
+        android:text="To"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewTo" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextTo" />
+    <TextView
+        android:text="Select Date"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewSd" />
+  
+    <Button android:text="Pick Date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnPickDate"/>
+  
+    <Button android:text="POST RIDE"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnPOST"/>
+  
+</LinearLayout>
