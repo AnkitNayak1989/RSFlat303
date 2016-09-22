@@ -1531,8 +1531,8 @@ namespace RideSharing
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f060064
-			public const int action0 = 2131099748;
+			// aapt resource value: 0x7f060066
+			public const int action0 = 2131099750;
 			
 			// aapt resource value: 0x7f060042
 			public const int action_bar = 2131099714;
@@ -1558,8 +1558,8 @@ namespace RideSharing
 			// aapt resource value: 0x7f060043
 			public const int action_context_bar = 2131099715;
 			
-			// aapt resource value: 0x7f060068
-			public const int action_divider = 2131099752;
+			// aapt resource value: 0x7f06006a
+			public const int action_divider = 2131099754;
 			
 			// aapt resource value: 0x7f060003
 			public const int action_menu_divider = 2131099651;
@@ -1588,38 +1588,38 @@ namespace RideSharing
 			// aapt resource value: 0x7f06001a
 			public const int beginning = 2131099674;
 			
-			// aapt resource value: 0x7f060079
-			public const int btnBookRide = 2131099769;
+			// aapt resource value: 0x7f06007b
+			public const int btnBookRide = 2131099771;
 			
-			// aapt resource value: 0x7f060063
-			public const int btnFetchToken = 2131099747;
-			
-			// aapt resource value: 0x7f060060
-			public const int btnLogin = 2131099744;
-			
-			// aapt resource value: 0x7f06005a
-			public const int btnPOST = 2131099738;
-			
-			// aapt resource value: 0x7f060059
-			public const int btnPickDate = 2131099737;
+			// aapt resource value: 0x7f060065
+			public const int btnFetchToken = 2131099749;
 			
 			// aapt resource value: 0x7f060062
-			public const int btnRegister = 2131099746;
+			public const int btnLogin = 2131099746;
 			
-			// aapt resource value: 0x7f060075
-			public const int btnRegisterComplete = 2131099765;
+			// aapt resource value: 0x7f06005c
+			public const int btnPOST = 2131099740;
+			
+			// aapt resource value: 0x7f060058
+			public const int btnPickDate = 2131099736;
+			
+			// aapt resource value: 0x7f060064
+			public const int btnRegister = 2131099748;
+			
+			// aapt resource value: 0x7f060077
+			public const int btnRegisterComplete = 2131099767;
 			
 			// aapt resource value: 0x7f06002c
 			public const int buttonPanel = 2131099692;
 			
-			// aapt resource value: 0x7f060065
-			public const int cancel_action = 2131099749;
+			// aapt resource value: 0x7f060067
+			public const int cancel_action = 2131099751;
 			
 			// aapt resource value: 0x7f06003a
 			public const int checkbox = 2131099706;
 			
-			// aapt resource value: 0x7f06006b
-			public const int chronometer = 2131099755;
+			// aapt resource value: 0x7f06006d
+			public const int chronometer = 2131099757;
 			
 			// aapt resource value: 0x7f06001e
 			public const int collapseActionView = 2131099678;
@@ -1642,26 +1642,20 @@ namespace RideSharing
 			// aapt resource value: 0x7f06000d
 			public const int disableHome = 2131099661;
 			
-			// aapt resource value: 0x7f06005d
-			public const int editText1 = 2131099741;
-			
-			// aapt resource value: 0x7f060071
-			public const int editText2 = 2131099761;
-			
 			// aapt resource value: 0x7f06005f
-			public const int editText3 = 2131099743;
+			public const int editText1 = 2131099743;
+			
+			// aapt resource value: 0x7f060073
+			public const int editText2 = 2131099763;
+			
+			// aapt resource value: 0x7f060061
+			public const int editText3 = 2131099745;
+			
+			// aapt resource value: 0x7f060076
+			public const int editText4 = 2131099766;
 			
 			// aapt resource value: 0x7f060074
-			public const int editText4 = 2131099764;
-			
-			// aapt resource value: 0x7f060072
-			public const int editText5 = 2131099762;
-			
-			// aapt resource value: 0x7f060055
-			public const int editTextFrom = 2131099733;
-			
-			// aapt resource value: 0x7f060057
-			public const int editTextTo = 2131099735;
+			public const int editText5 = 2131099764;
 			
 			// aapt resource value: 0x7f060044
 			public const int edit_query = 2131099716;
@@ -1669,8 +1663,8 @@ namespace RideSharing
 			// aapt resource value: 0x7f06001b
 			public const int end = 2131099675;
 			
-			// aapt resource value: 0x7f060070
-			public const int end_padder = 2131099760;
+			// aapt resource value: 0x7f060072
+			public const int end_padder = 2131099762;
 			
 			// aapt resource value: 0x7f060026
 			public const int expand_activities_button = 2131099686;
@@ -1678,8 +1672,11 @@ namespace RideSharing
 			// aapt resource value: 0x7f060039
 			public const int expanded_menu = 2131099705;
 			
-			// aapt resource value: 0x7f06005c
-			public const int frameLayout1 = 2131099740;
+			// aapt resource value: 0x7f06005e
+			public const int frameLayout1 = 2131099742;
+			
+			// aapt resource value: 0x7f06005b
+			public const int get_address_button = 2131099739;
 			
 			// aapt resource value: 0x7f060005
 			public const int home = 2131099653;
@@ -1696,17 +1693,17 @@ namespace RideSharing
 			// aapt resource value: 0x7f060027
 			public const int image = 2131099687;
 			
-			// aapt resource value: 0x7f06006f
-			public const int info = 2131099759;
+			// aapt resource value: 0x7f060071
+			public const int info = 2131099761;
 			
 			// aapt resource value: 0x7f060000
 			public const int item_touch_helper_previous_elevation = 2131099648;
 			
-			// aapt resource value: 0x7f060069
-			public const int line1 = 2131099753;
+			// aapt resource value: 0x7f06006b
+			public const int line1 = 2131099755;
 			
-			// aapt resource value: 0x7f06006d
-			public const int line3 = 2131099757;
+			// aapt resource value: 0x7f06006f
+			public const int line3 = 2131099759;
 			
 			// aapt resource value: 0x7f06000a
 			public const int listMode = 2131099658;
@@ -1714,8 +1711,11 @@ namespace RideSharing
 			// aapt resource value: 0x7f060029
 			public const int list_item = 2131099689;
 			
-			// aapt resource value: 0x7f060067
-			public const int media_actions = 2131099751;
+			// aapt resource value: 0x7f06005a
+			public const int location_text = 2131099738;
+			
+			// aapt resource value: 0x7f060069
+			public const int media_actions = 2131099753;
 			
 			// aapt resource value: 0x7f06001c
 			public const int middle = 2131099676;
@@ -1732,11 +1732,11 @@ namespace RideSharing
 			// aapt resource value: 0x7f06000b
 			public const int normal = 2131099659;
 			
-			// aapt resource value: 0x7f060052
-			public const int owner = 2131099730;
-			
 			// aapt resource value: 0x7f06002e
 			public const int parentPanel = 2131099694;
+			
+			// aapt resource value: 0x7f060059
+			public const int pickTime = 2131099737;
 			
 			// aapt resource value: 0x7f060006
 			public const int progress_circular = 2131099654;
@@ -1747,11 +1747,8 @@ namespace RideSharing
 			// aapt resource value: 0x7f06003c
 			public const int radio = 2131099708;
 			
-			// aapt resource value: 0x7f06005b
-			public const int recyclerView = 2131099739;
-			
-			// aapt resource value: 0x7f060053
-			public const int rider = 2131099731;
+			// aapt resource value: 0x7f06005d
+			public const int recyclerView = 2131099741;
 			
 			// aapt resource value: 0x7f060016
 			public const int screen = 2131099670;
@@ -1825,8 +1822,8 @@ namespace RideSharing
 			// aapt resource value: 0x7f060019
 			public const int src_over = 2131099673;
 			
-			// aapt resource value: 0x7f060066
-			public const int status_bar_latest_event_content = 2131099750;
+			// aapt resource value: 0x7f060068
+			public const int status_bar_latest_event_content = 2131099752;
 			
 			// aapt resource value: 0x7f06004d
 			public const int submit_area = 2131099725;
@@ -1834,11 +1831,11 @@ namespace RideSharing
 			// aapt resource value: 0x7f06000c
 			public const int tabMode = 2131099660;
 			
-			// aapt resource value: 0x7f06006e
-			public const int text = 2131099758;
+			// aapt resource value: 0x7f060070
+			public const int text = 2131099760;
 			
-			// aapt resource value: 0x7f06006c
-			public const int text2 = 2131099756;
+			// aapt resource value: 0x7f06006e
+			public const int text2 = 2131099758;
 			
 			// aapt resource value: 0x7f060035
 			public const int textSpacerNoButtons = 2131099701;
@@ -1846,35 +1843,38 @@ namespace RideSharing
 			// aapt resource value: 0x7f060051
 			public const int textView1 = 2131099729;
 			
-			// aapt resource value: 0x7f06005e
-			public const int textView2 = 2131099742;
+			// aapt resource value: 0x7f060060
+			public const int textView2 = 2131099744;
 			
-			// aapt resource value: 0x7f060061
-			public const int textView3 = 2131099745;
+			// aapt resource value: 0x7f060063
+			public const int textView3 = 2131099747;
 			
-			// aapt resource value: 0x7f060073
-			public const int textView4 = 2131099763;
+			// aapt resource value: 0x7f060075
+			public const int textView4 = 2131099765;
 			
-			// aapt resource value: 0x7f060054
-			public const int textViewFrom = 2131099732;
+			// aapt resource value: 0x7f060052
+			public const int textViewFrom = 2131099730;
+			
+			// aapt resource value: 0x7f06007a
+			public const int textViewGender = 2131099770;
 			
 			// aapt resource value: 0x7f060078
-			public const int textViewGender = 2131099768;
-			
-			// aapt resource value: 0x7f060076
-			public const int textViewName = 2131099766;
-			
-			// aapt resource value: 0x7f060058
-			public const int textViewSd = 2131099736;
-			
-			// aapt resource value: 0x7f060077
-			public const int textViewTime = 2131099767;
+			public const int textViewName = 2131099768;
 			
 			// aapt resource value: 0x7f060056
-			public const int textViewTo = 2131099734;
+			public const int textViewSd = 2131099734;
 			
-			// aapt resource value: 0x7f06006a
-			public const int time = 2131099754;
+			// aapt resource value: 0x7f060079
+			public const int textViewTime = 2131099769;
+			
+			// aapt resource value: 0x7f060054
+			public const int textViewTo = 2131099732;
+			
+			// aapt resource value: 0x7f06006c
+			public const int time = 2131099756;
+			
+			// aapt resource value: 0x7f060057
+			public const int timeDisplay = 2131099735;
 			
 			// aapt resource value: 0x7f06002b
 			public const int title = 2131099691;
@@ -1884,6 +1884,12 @@ namespace RideSharing
 			
 			// aapt resource value: 0x7f06002f
 			public const int topPanel = 2131099695;
+			
+			// aapt resource value: 0x7f060055
+			public const int txtTextSearch = 2131099733;
+			
+			// aapt resource value: 0x7f060053
+			public const int txtTextSearchFrom = 2131099731;
 			
 			// aapt resource value: 0x7f060009
 			public const int up = 2131099657;

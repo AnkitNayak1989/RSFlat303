@@ -56,8 +56,6 @@ namespace RideSharing
 
 
             }
-
-
         }
         private async void BtnLogin_Click(object sender, EventArgs e)
         {

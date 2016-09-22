@@ -49,10 +49,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/btnRegister"
         android:onClick="BtnRegister_Click" />
-  <Button
+    <Button
         android:text="FETCH TOKEN"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/btnFetchToken"
-        android:onClick="BtnFetchToken_Click"/>
+        android:onClick="BtnFetchToken_Click" />
 </LinearLayout>
