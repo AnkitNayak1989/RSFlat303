@@ -11,8 +11,7 @@ using Android.Views;
 using Android.Widget;
 using System.Net.Http;
 using System.Net.Http.Headers;
-
-
+using Newtonsoft.Json;
 
 namespace RideSharing
 {
@@ -72,46 +71,55 @@ namespace RideSharing
             edttxtconfirmpassword = FindViewById<EditText>(Resource.Id.editText5);
             edttxtemailid = FindViewById<EditText>(Resource.Id.editText4);
             edttxtmobileno = FindViewById<EditText>(Resource.Id.editText3);
-            /*try
+            try
             {
-                using (var client = new HttpClient())
-                {
-                    client.BaseAddress = new Uri("http://192.168.2.4/webApi/");
-                    client.DefaultRequestHeaders.Accept.Clear();
-                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                    string input = @"{ ""UserName"": """ + edttxtusername.Text + @""", ""Password"":""" + edttxtpassword.Text + @""", ""ConfirmPassword"":""" + edttxtconfirmpassword.Text + @""", ""Email"":""" + edttxtemailid.Text + @""", ""PhoneNumber"":""" + edttxtmobileno.Text + @"""}";
-                    HttpContent content = new StringContent(input);
-                    content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+              {
+                    RegisterFields r = new RegisterFields()
+                    {
+                        UserName = edttxtusername.Text,
+                        Password = edttxtpassword.Text,
+                        ConfirmPassword = edttxtconfirmpassword.Text,
+                        PhoneNumber = edttxtmobileno.Text,
+                        Email = edttxtemailid.Text 
+                        /*UserName = "ankit",
+                        Password = "ankit@123",
+                        ConfirmPassword = "ankit@123",
+                        PhoneNumber = "9052682419",
+                        Email = "ankit@gmail.com"*/
+                    };
+                    var json = JsonConvert.SerializeObject(r);
+                    var content = new StringContent(json, Encoding.UTF8, "application/json");
+                    using (var client = new HttpClient())
+                    {
+                        client.BaseAddress = new Uri("http://register1.azurewebsites.net/");
+                        client.DefaultRequestHeaders.Accept.Clear();
+                        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                        //string input = "USERNAME=" + edttxtusername.Text + "PASSWORD=" + edttxtpassword.Text + "MOBILE_NO=" + edttxtmobileno.Text + "EMAIL_ID=" + edttxtemailid.Text;
+                        //HttpContent content = new StringContent(input);
 
-                    // New code:
-                    HttpResponseMessage response = await client.PostAsync("api/Account/Register", content);
-                    if (response.IsSuccessStatusCode)
+                          var res = client.PostAsync("api/Account/Register", content);
+                       var r1 = res.Result;
+                   /* var client = new HttpClient();
+                    client.BaseAddress = new Uri("http://lift1989.azurewebsites.net/");
+
+                    var jsonData = JsonConvert.SerializeObject(r);
+                   // var content1 = new StringContent(jsonData, Encoding.UTF8, "application/json");
+                    var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+                    content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+                    var response = client.PostAsync("api/Account/Register", content);
+                    var res = response.Result; */
+                    /*if (response.IsSuccessStatusCode)
                     {
                         var builder = new AlertDialog.Builder(this);
                         builder.SetMessage("Register Successful");
                         builder.Create().Show();
+                    }*/
+                    /*if (response.IsSuccessStatusCode)
+                    {
+                        edttxtmobileno.Text = "Success";
                     }
                     else
-                        edttxtusername.Text = response.ReasonPhrase + response.Content.ToString();// "Fail";
-                }
-
-                //if (edttxtusername.Text == "Success")
-                {
-                    using (var client = new HttpClient())
-                    {
-                        client.BaseAddress = new Uri("http://192.168.2.4/webApi/");
-                        client.DefaultRequestHeaders.Accept.Clear();
-                        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                        string input = "username=" + edttxtusername.Text + "&password=" + edttxtpassword.Text + "&grant_type=password";
-                        HttpContent content = new StringContent(input);
-
-                        HttpResponseMessage response = await client.PostAsync("token", content);
-                        if (response.IsSuccessStatusCode)
-                        {
-                            edttxtmobileno.Text = "Success";
-                        }
-                        else
-                            edttxtmobileno.Text = response.ReasonPhrase + response.Content.ToString();// "Fail";
+                        edttxtmobileno.Text = response.ReasonPhrase + response.Content.ToString();// "Fail"; */
                     }
                 }
             }
@@ -120,7 +128,7 @@ namespace RideSharing
                 var builder = new AlertDialog.Builder(this);
                 builder.SetMessage(ex.Message);
                 builder.Create().Show();
-            }*/
+            }
             var intent = new Intent(this, typeof(MainPage));
             StartActivity(intent);
 

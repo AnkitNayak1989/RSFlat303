@@ -48,33 +48,24 @@
         android:id="@+id/txtTextSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:text="Select Date"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="1dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/textViewSd" />
-        <TextView
-            android:text=""
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="1dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/timeDisplay" />
-    </LinearLayout>
     <Button
         android:text="PICK DATE"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/btnPickDate" />
+    <TextView
+        android:id="@+id/textViewSd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
     <Button
         android:id="@+id/pickTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="PICK TIME" />
+    <TextView
+        android:id="@+id/timeDisplay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
     <TextView
         android:layout_width="fill_parent"
         android:textAppearance="?android:attr/textAppearanceMedium"

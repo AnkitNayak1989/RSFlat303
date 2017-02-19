@@ -21,6 +21,8 @@ using Android.Views.InputMethods;
 //using Android.Gms.Maps;
 //using Android.Gms.Maps.Model;
 using Newtonsoft.Json;
+using System.Net.Http;
+using System.Net.Http.Headers;
 
 namespace RideSharing
 {
@@ -41,11 +43,11 @@ namespace RideSharing
             view.FindViewById<TextView>(Resource.Id.textViewGender);
             view.FindViewById<TextView>(Resource.Id.textViewTime);
 
-            Ride[] rides = new Ride[] { new Ride() {Name="Ankit", From="Wakad", To="Infosys", Gender="Male", Time="8 AM" },
-                new Ride() {Name="Rahil", From="Vishal Nagar", To="Infosys", Gender="Male", Time="9 AM" },
-                new Ride() {Name="Abhishek", From="Hinjewadi Chowk", To="Infosys", Gender="Male", Time="9:30 AM" },
-                new Ride() {Name="Rohit", From="Aundh", To="Infosys", Gender="Male", Time="8:30 AM" },
-                new Ride() {Name="Rahul", From="Baner", To="Infosys", Gender="Male", Time="10:30 AM" }};
+            Rides[] rides = new Rides[] { new Rides() {Name="Ankit", From="Wakad", To="Infosys", Gender="Male", Time="8 AM" },
+                new Rides() {Name="Rahil", From="Vishal Nagar", To="Infosys", Gender="Male", Time="9 AM" },
+                new Rides() {Name="Abhishek", From="Hinjewadi Chowk", To="Infosys", Gender="Male", Time="9:30 AM" },
+                new Rides() {Name="Rohit", From="Aundh", To="Infosys", Gender="Male", Time="8:30 AM" },
+                new Rides() {Name="Rahul", From="Baner", To="Infosys", Gender="Male", Time="10:30 AM" }};
 
             RidesAdapter rideAD = new RidesAdapter(rides);
 
@@ -87,7 +89,7 @@ namespace RideSharing
         // Event handler for item clicks:
         public event EventHandler<int> ItemClick;
 
-        Ride[] rides = new Ride[5];
+        Rides[] rides = new Rides[5];
 
         public override int ItemCount
         {
@@ -97,7 +99,7 @@ namespace RideSharing
             }
         }
 
-        public RidesAdapter(Ride[] rides)
+        public RidesAdapter(Rides[] rides)
         {
             this.rides = rides;
         }
@@ -154,6 +156,7 @@ namespace RideSharing
         TextView _locationText;
         AutoCompleteTextView txtSearch;
         AutoCompleteTextView txtSearchFrom;
+        Button PostButton;
 
 
         string strAutoCompleteGoogleApi = "https://maps.googleapis.com/maps/api/place/autocomplete/json?input=";
@@ -190,6 +193,8 @@ namespace RideSharing
            // _addressText = view.FindViewById<TextView>(Resource.Id.address_text);
             _locationText = view.FindViewById<TextView>(Resource.Id.location_text);
             addressbutton = view.FindViewById<Button>(Resource.Id.get_address_button);
+            PostButton = view.FindViewById<Button>(Resource.Id.btnPOST);
+            PostButton.Click += PostButton_Click;
             addressbutton.Click += AddressButton_OnClick;
 
             InitializeLocationManager();
@@ -265,6 +270,30 @@ namespace RideSharing
             };
             return view;
 
+        }
+
+        private async void PostButton_Click(object sender, EventArgs e)
+        {
+            Ride Rd = new Ride()
+            {
+                FROM = txtSearchFrom.Text,
+                TO = txtSearch.Text,
+                DATE = DateTime.Now.ToString(),
+                TIME = DateTime.Now.TimeOfDay.ToString()       
+            };
+            var json = JsonConvert.SerializeObject(Rd);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("http://192.168.0.102/PostAPI/");
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("Application/json"));
+               // string input = @"{ 'FROM': '" + txtSearchFrom.Text + "', 'TO':'" + txtSearch.Text + "', 'DATE':'" + dateDisplay.Text + "', 'TIME':'" + time_display.Text + "'}";
+               // HttpContent content = new StringContent(input, Encoding.UTF8, "application/json");
+                HttpResponseMessage response = await client.PostAsync("api/PostRides", content);
+
+            }
+                
         }
 
         async void TxtSearchFrom_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
@@ -494,13 +523,45 @@ namespace RideSharing
     }
     public class MyRidesFragment : Fragment
     {
+        Button shwName;
+        TextView shwText;
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             View view = inflater.Inflate(Resource.Layout.Fragment_MyRides, null);
             view.FindViewById<TextView>(Resource.Id.textView1).SetText(Resource.String.MyRides_label);
             // view.FindViewById<ImageView>(Resource.Id.imageView1).SetImageResource(Resource.Drawable.ic_action_speakers); 
+            shwName = view.FindViewById<Button>(Resource.Id.showName);
+            shwText = view.FindViewById<TextView>(Resource.Id.showText);
+            shwName.Click += ShwName_Click;
             return view;
 
+        }
+
+        private async void ShwName_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri("http://rides1.azurewebsites.net/");
+                    client.DefaultRequestHeaders.Accept.Clear();
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                    // New code:
+                    HttpResponseMessage response = await client.GetAsync("api/Rides");
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var res = response.Content.ReadAsStringAsync();
+                        Console.WriteLine(res.Result);
+                        shwText.Text = res.Result;
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+
+            }
         }
     }
 }

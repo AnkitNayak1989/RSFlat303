@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace RideSharing
 {
-    public class Ride
+    public class Rides
     {
         public string From { get; set; }
         public string To { get; set; }
